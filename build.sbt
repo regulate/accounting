@@ -1,6 +1,6 @@
 import sbt.Keys.libraryDependencies
 
-name := """balance-accounting"""
+name := """accounting"""
 
 version := "1.0-SNAPSHOT"
 
