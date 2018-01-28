@@ -9,6 +9,9 @@ import play.api.mvc._
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 
+/**
+  * Filter that logs incoming requests information such as uri, remote address, request method and request status
+  */
 class AccessLoggingFilter @Inject()(implicit val mat: Materializer) extends Filter {
 
   val accessLogger = Logger("access")

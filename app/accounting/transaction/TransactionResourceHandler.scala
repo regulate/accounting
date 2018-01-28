@@ -25,6 +25,9 @@ object TransactionResource {
 
 class TransactionResourceHandler @Inject()(txRepository: TransactionRepository)(implicit ec: ExecutionContext) {
 
+  /**
+    * Returns particular TransactionResource item
+    */
   def lookup(id: Long): Future[Option[TransactionResource]] = {
     val txFuture = txRepository.lookup(id)
     txFuture.map { maybeTxData =>
@@ -34,6 +37,9 @@ class TransactionResourceHandler @Inject()(txRepository: TransactionRepository)(
     }
   }
 
+  /**
+    * Returns all TransactionResource items
+    */
   def list: Future[Iterable[TransactionResource]] = {
     txRepository.list.map { txDataList =>
       txDataList.map(txData => createTxResource(txData))

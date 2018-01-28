@@ -3,6 +3,9 @@ import accounting.transaction.{InMemorySetTransactionRepository, TransactionRepo
 import com.google.inject.{AbstractModule, TypeLiteral}
 import util.{AtomicLongCounter, IDGenerator}
 
+/**
+  * Guice DI module
+  */
 class Module extends AbstractModule {
 
   override def configure(): Unit = {
