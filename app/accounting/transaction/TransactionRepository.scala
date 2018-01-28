@@ -24,8 +24,7 @@ trait TransactionRepository {
 @Singleton
 class InMemorySetTransactionRepository @Inject()()(implicit ec: ExecutionContext) extends TransactionRepository {
 
-  implicit val ordering: Ordering[TransactionData] = by{_.id}
-  private val transactions = new AtomicReference[Set[TransactionData]](new TreeSet[TransactionData]())
+  private val transactions = new AtomicReference[Set[TransactionData]](Set.empty)
 
   override def create(transaction: TransactionData): Future[Long] = {
     Future {
