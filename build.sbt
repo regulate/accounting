@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
   "org.mockito" % "mockito-all" % "1.9.5" % Test
 )
 
+// execute tests on the same jvm
 Keys.fork in Test := false
 parallelExecution in Test := false
 // don't include api docs
